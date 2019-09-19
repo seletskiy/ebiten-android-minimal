@@ -22,8 +22,6 @@ import (
 	"github.com/hajimehoshi/ebiten/mobile"
 )
 
-func Export() {}
-
 type game struct{}
 
 func (game *game) Update(screen *ebiten.Image) error {
@@ -46,3 +44,6 @@ func (game *game) Layout(width int, height int) (int, int) {
 func init() {
 	mobile.SetGame(&game{})
 }
+
+// At least one exported function is required by gomobile.
+func Export() {}
